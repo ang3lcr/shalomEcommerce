@@ -21,13 +21,13 @@ img{
 .img-bosses{
     width: 50%;
     margin-left: 100px;
-    margin-top: 15%;
     border: 2px solid white;
 }
 
 .text-about{
-    width: 50%;
+    max-width: 30%;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     margin-right: 100px;
+    border: 1px solid red;
 }
