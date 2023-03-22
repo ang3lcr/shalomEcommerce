@@ -16,17 +16,23 @@ img{
     gap: 5%;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    
 }
 
 .img-bosses{
-    width: 50%;
+    width: 800px;
     margin-left: 100px;
     border: 2px solid white;
 }
 
 .text-about{
-    max-width: 30%;
+    width: 800px;
     color: white;
     font-size: 30px;
     margin-right: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

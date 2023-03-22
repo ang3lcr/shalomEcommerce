@@ -95,3 +95,9 @@ li{
     gap: 100px;
     text-align: center;
 }
+
+@media (max-width: 1000px) {
+  .second-container {
+    flex-direction: column;
+  }
+}

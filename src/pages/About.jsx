@@ -6,9 +6,12 @@ const About = () => {
   return (
     <div className='about' id='about'>
       
-      <div className="img-bosses">
+    {/*
+     
+     <div className="img-bosses">
         <img src={jefesImg} alt="" />
       </div>
+  */} 
       <div className='text-about'>
           Somos una empresa desde 1980 dedicada a nuestros clientes, con el fin de cumplir sus deseos para que puedan compartir sus mejores momentos con los que mas quieren.
           Shalom, ha pasado de mano en mano de joyeros experimentados para hacer los mejores cortes de alta joyeria.

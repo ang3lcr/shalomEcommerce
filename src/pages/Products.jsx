@@ -107,16 +107,46 @@ const Produts = () => {
             category: "Esclava"
         },
     ]
+
+    const cart = []
+
     const [filteredProducts, setfilteredProducts] = useState(products);
+
     const filterCategory = (categoryId) => {
         const filtered = products.filter(product => product.type == categoryId);
         setfilteredProducts(filtered)
     }
-    console.log(filteredProducts);
+
 
     const showAll = () => {
         setfilteredProducts(products)
     }
+
+
+
+
+
+
+
+
+    const addToCart = (productId) => {
+        const productFound = products.find(product => product.id === productId);
+        cart.push(productFound)
+        localStorage.setItem("cart", JSON.stringify(cart))
+    }
+    const currentCart = JSON.parse(localStorage.getItem("cart"))
+
+    const deleteCart = () => {
+        
+    }
+
+    
+    
+    
+
+  
+
+
 
     return (
     <div className='products' id='products'>
@@ -141,12 +171,23 @@ const Produts = () => {
                     </h2>
                     <p className='price'>
                         ${product.price}
-                    </p>
-                    
+                    </p>   
+                    <button className="addToCartButton" onClick={() => addToCart(product.id)}>Agregar</button>             
                 </div>
-            ))}
+            ))}                                                                                                          
         </div>
-    </div>
+        {<ul className='products-cart'>
+            <p className='cart-title'>Cart</p>
+                {currentCart.map(product => (
+                    <li>
+                        <p className='product-title inCart'>{product.name}</p>
+                        <p className='product-price inCart'>{product.price}</p>
+                    </li>
+                    
+
+                ))}
+                </ul>}
+      </div>
   )
 }
       
