@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/products.css'
-
+import axios from 'axios';
 
 
 const Produts = () => {
@@ -121,7 +121,7 @@ const Produts = () => {
     const showAll = () => {
         setfilteredProducts(products)
     }
-
+  
 
 
 
@@ -152,7 +152,7 @@ const Produts = () => {
     <div className='products' id='products'>
               <ul className='product-menu'>
             {categories.map(category => (
-                <li className='category-element' onClick={() => filterCategory(category.category)} id={category.id}>
+                <li className='category-element'  key={category.id} onClick={() => filterCategory(category.category)} id={category.id}>
                     {category.category}
                 </li>
             ))}
@@ -162,7 +162,7 @@ const Produts = () => {
           </ul>
         <div className="card-container">
             {filteredProducts.map(product => (
-                <div className="product-card" id={product.id}>
+                <div className="product-card" key={product.id}>
                     <div className='product-image-container'>
                         <img src={product.imageUrl} alt="" />
                     </div>
@@ -179,7 +179,7 @@ const Produts = () => {
         {<ul className='products-cart'>
             <p className='cart-title'>Cart</p>
                 {currentCart.map(product => (
-                    <li>
+                    <li key={product.id}>
                         <p className='product-title inCart'>{product.name}</p>
                         <p className='product-price inCart'>{product.price}</p>
                     </li>
